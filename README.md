@@ -3,8 +3,6 @@ My Homework for Online Courses:
 
 UC Berkeley: [CS188-SU16 Artificial Intelligence - Berkeley (Summer 2016)](https://edge.edx.org/courses/course-v1:BerkeleyX+CS188-SU16+SU16/f5722e0cf4234e4284764db6414b685c/)
 
-UC Berkeley: [CS189 Introduction to Machine Learning](https://people.eecs.berkeley.edu/~jrs/189s16/)
-
 UC Berkeley: [CS 294: Deep Reinforcement Learning, Fall 2017](http://rll.berkeley.edu/deeprlcourse/) 
 
 Standford: [CS231n Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/index.html)
