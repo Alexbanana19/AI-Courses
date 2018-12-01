@@ -1,0 +1,29 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{ragged2e}
+\usepackage{subfigure}
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
+\begin{document}
+\centerline{\large{\textbf{CMPUT 366 Reading-Writing Exercise 11}}}
+
+\ \\
+\noindent \textbf{Name: Minghan Li}\\
+\textbf{Student ID: 1561234}\\
+\textbf{CCID: minghan4}\\
+
+Chapter 15 and 16 introduce how algorithms in Reinforcement Learning correspond with the models and evidence in Psychology and Neuroscience. In fact it is not surprising that behavioral pscology and reinforcemnt leaning are strongly linked to each other since many algorithms in reinforcement learning have drawn inspiration from psycology. Chapter 15 explains the similarity between the computational models and the learning theories that explain how animals learn. Just like the two main topics in this book, learning theories in psycology are also divided into two categories: \textit{prediction} and \textit{control}. But in psycology researchers use \textit{classical conditioning} instead of prediction and \textit{instrumental conditioning} instead of control. In prediction, or classical conditioning,  it shows that animals are capable of predicting upcoming stimulis no matter if the stimulis are rewarding. Similar concept in reinforcement learning is called \textit{Policy Evaluation}. We can also see that TD model can well illustrate the high-order conditioning and has resembles the Rescorla-Wagner Model that explain blocking in many ways. However, the Rescorla-Wagner Model is often only deemed as a trial-level model, as opposed to TD model which is real-time.\\
+
+For control, which is also called Instrumental Conditioning, experimental evidence shows that the delivery of a reinforceing stimulus is contingent on what the animal does. Scientists have drawn a number of conclusions from experiments and formulate some laws to describe them. One of the most influential one is the Law of Effect, which describes learning by trial and error, and it shows essential features that correspond to those of reinforcement learning: Learning is both selectional and associative. Law of effects also describes an elementary of combining search and memory, which are also important parts of reinforcement learning algorithms. Moreover, this chapter also introduces delayed reinforcement learning, where animals can learn even when US onset follows CS offset by a non-negligible time interval, which also correpond to eligibility traces and value function in reinforcement learning. Cognitive maps, habitual behaviors and goal-directed behavior also reveal astonishing resemblance to the algorithms or mechanisms in reinforcement learning.\\
+
+Chapter 16 introduces how neuroscience and reinforcement learning have influence one another. My favorite part is the section that explains the striking resemblance between the brain's reward system and the theory of reinforcement learning in this book, especially the connection between dopamine and TD error. The first evidence shows that there are certain types of neurons that reach every corner of the brain, which is assumed to provide certain signals for other functional neurons to adjust their "behaviors". The second strong experimental evidence from many additional studies about dopamine neurons hypothesizes that dopamine is the signal and it works exactly like TD errors, which further supports the statement that animials and human actually use similar mechanism to learn from the enviroment as those of agents in reinforcement learning. This chapter also introduces other hypotheses and theories such as neural actor-critic, model based methods in brain and using reinforcement learning to explain addiction. \\
+
+As we are reaching the end of this book, I become more and more clear about the theories in reinforcement learning and I really believe it's the key to the general artificial intelligence for the mechanism in it fits well with how we human and animals learn from the environment.
+
+\end{document}

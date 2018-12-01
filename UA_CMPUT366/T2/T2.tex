@@ -1,0 +1,36 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{ragged2e}
+\usepackage{subfigure}
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
+\begin{document}
+\title{\textbf{CMPUT 366 Reading-Writing Exercise 2}}
+\date{}
+\maketitle
+\noindent \textbf{Name: Minghan Li}\\
+\textbf{Student ID: 1561234}\\
+\textbf{CCID: minghan4}\\
+
+
+\noindent \textbf{Thought Question}
+\ \\
+Chapter 3 introduces basic elements in Reinforcement Learning, including the relationship between \textit{agent} and \textit{environment},  Markov Decision Process(MDP) which consists of tuple $<S, A, P, R, S'>$, as well as the concept of value functions. Among those basic concepts, \textit{rewards} play a key role in learning because the agent's goal is to maximize the total discounted sum of rewards, which is the return $G_{t}$. Rewards are also the source of forming agent's value function, which tells the agent how to pick actions. But what if the reward signals are very sparse in the environment? In this situation, how can the agent still learn the correct value functions?
+
+\ \\
+\noindent \textbf{Answer 1}\ \\ 
+If reward signals are very sparse in the environment, I think learning can be very difficult. For example, if an agent tries to escape from a large maze and only gets positive reward at the exit otherwise negative, the agent would wind up in the maze for a long time before it learns anything. But if we allow the agent to take action in bigger steps, I think that would efficiently speed up the learning. But the credit assignment seems to be harder in this case so I don't know whether it's plausible to allow agents to do so. 
+
+\ \\
+\noindent \textbf{Answer 2} \ \\
+In my viewpoint, another way to fix this problem is to construct our own reward functions, which is a little bit similar to "heuristics" in search problems. However, it seems to me that constructing good reward function, or good "heuristics" is very hard. I have done some experiments on Pacman using heuristic search, which is very hard to define a good heuristic even for a simple maze. I am not sure whether this is possible in Reinforcement Learning as well to build our own reward functions, maybe it can also be learned while the agent is acting in the environment?
+
+
+
+\end{document}

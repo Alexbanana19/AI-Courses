@@ -1,0 +1,36 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{ragged2e}
+\usepackage{subfigure}
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
+\begin{document}
+\centerline{\large{\textbf{CMPUT 366 Reading-Writing Exercise 4}}}
+
+\noindent \textbf{Name: Minghan Li}\\
+\textbf{Student ID: 1561234}\\
+\textbf{CCID: minghan4}\\
+
+Chapter 5 introduces a model-free learning algorithm called \textit{Monte Carlo} method, which requires only raw or simulated experiences from the interactions between the agent and environment, or from simulation models. The advantages and disadvantages are obvious for Monte Carlo learning: It doesn't need the dynamics of the environment and it's an unbiased estimator of expected returns at each state, but updating the value function only at the end of each episode greatly slows down the learning process. However, it's still a pratical algorithm for both policy evaluation or control tasks, and it's less harmed by violations of the Markov property.\\
+
+Moreover, this chapter also introduces the concept of \textit{off-policy} learning, where \textit{on-policy} learning is just a special case of it when the target policy is the behavior policy. In off-policy learning , one common technique is called \textit{importance sampling}, which can estimate expected values under one distribution given samples from another. Despite importance sampling is powerful, how to trade off between bias and variance still remains an opening research question. This chapter also gives some insigts and solutions to this problem.\\
+
+If we look deeper into Monte Carlo learning, we will run into several questions about it:
+(1) How to compute the returns for each state?
+(2) How to ensure sufficient exploration?
+(3) How to use it on policy evaluation/control tasks?
+(4) How to implement it in off-policy setting?\\
+
+Fortunately the textbook provides several answers with respect to each of these questions. To compute the return, we can consider \textit{first visit} setting or \textit{every visit} setting; and for sufficient exploration, one could try either using \textit{exploring starts} or exploratory policy, e.g.\textit{$\epsilon$-greedy}. For prediction tasks learning is quite straigt forward, while in control tasks learning is very similar to \textit{General Policy Iteration}, which includes policy evaluation and policy improvement, therefore it actually guaratees the state-value estimation to converge to the true state value asymtotically.\\
+
+For the rest of the chapter the authors introduce off-policy learning and utilize a method called \textit{importance sampling}. In off-policy learning there is a \textit{target policy} we want to evaluate and a \textit{behavior policy} to generate the actual data. It becomes \textit{on-policy} when the target policy and the behavior policy is the same. For the learning to be effective, the behavior policy is required to be a \textit{coverage} for the target policy.\\
+
+There are two regular importance sampling techniques: \textit{ordinary importance sampling} and \textit{weighted importance sampling}. The ordinary importance sampling combining with Monte Carlo learning is an unbiased estimation of $v_{\pi}(s)$, but its variance can be unbounded, while the weighted importance sampling is biased but with much lower variances. So how to trade off between bias and variance has always been an issue. One idea is to utilize the inner structure of the returns to reduce the variance while we can still acquire a consistent estimator of the state value. \textit{Discounting aware importance sampling} consider $\gamma$ as soft termination and use it to mode the importance sampling ratio. We can also use \textit{Per-reward importance sampling} which truncates the importance sampling ratio for each reward respectively. These two methods can also reduce the variance for off-policy Monte Carlo learning with importance sampling. To sum up, Monte Carlo learning is powerful but still not efficient, and it has many problems in off-policy settings, but being unbiased is actually a very nice property compared with many other bootstrapping algorithms, and thus it is still widely used in many applications.  
+
+\end{document}
